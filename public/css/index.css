@@ -265,7 +265,7 @@
         }
         @media (max-width: 375px) {
             .bada-hero {
-                aspect-ratio: 16 / 9.5;
+                aspect-ratio: 16 / 6.2;
                 max-height: 48vh;
             }
         }
