@@ -1,0 +1,680 @@
+  /* ---------- RESET & ROOT VARIABLES (original + premium touches) ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* Default hide */
+.phone-login-btn{
+    display: none;
+}
+
+/* Mobile View */
+@media (max-width:768px){
+
+    .logo{
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .phone-login-btn{
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-left: auto;
+        margin-right: 15px;
+
+        padding: 8px 14px;
+        border-radius: 30px;
+
+        background: linear-gradient(135deg,#083d5d,#0a5d8f);
+        color: #fff;
+        font-size: 13px;
+        font-weight: 600;
+        text-decoration: none;
+
+        box-shadow: 0 4px 12px rgba(8,61,93,0.25);
+        transition: all .3s ease;
+    }
+
+    .phone-login-btn:hover{
+        transform: translateY(-2px);
+    }
+
+    .phone-login-btn i{
+        font-size: 14px;
+    }
+
+    /* Desktop login pill hide nahi hoga */
+    .menu-icon{
+        margin-left: 0;
+    }
+}
+
+        :root {
+            --primary: #083d5d;
+            --primary-dark: #062a41;
+            --secondary: #4da8da;
+            --accent: #ff6b35;
+            --light: #f2f7fc;
+            --dark: #333;
+            --gray: #555;
+            --white: #ffffff;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        /* base body styles */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            line-height: 1.6;
+            padding-top: 130px;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        /* ---------- FIXED HEADER CONTAINER ---------- */
+        .header-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        /* TOP BAR (unchanged) */
+        .top-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(90deg, #062a41 0%, #0a4d6e 100%);
+            color: #fff;
+            padding: 0 20px;
+            height: 40px;
+            font-size: 14px;
+            letter-spacing: 0.3px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .web-text p {
+            display: inline-block;
+            font-size: 0.6rem;
+            font-weight: 700;
+        }
+
+        .web-text p span {
+            font-weight: 300;
+        }
+
+        .web-text p::after {
+            content: "|";
+            margin: 0 10px;
+            color: #fff;
+            font-weight: 300;
+        }
+
+        .web-text p:last-child::after {
+            content: "";
+        }
+
+        .right-text {
+            display: flex;
+        }
+
+        .right-text a {
+            font-size: 0.6rem;
+            transition: all 0.3s ease;
+            color: white;
+        }
+
+        .right-text a::after {
+            content: "|";
+            margin: 0 8px;
+            color: #fff;
+            font-weight: 300;
+        }
+
+        .right-text a:last-child::after {
+            content: "";
+        }
+
+        /* MAIN NAVIGATION BAR (glass effect from original) */
+        .main-header {
+            backdrop-filter: blur(10px);
+            background: #fff;
+            border-bottom: 1px solid rgba(77, 168, 218, 0.3);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90px;
+            padding: 0 20px;
+            transition: all 0.3s ease;
+            
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            gap: 12px;
+        }
+
+        .logo img {
+            height: 100px;
+            max-height: 80px;
+            transition: all 0.3s ease;
+        }
+
+        /* DESKTOP MENU */
+        .menu {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            flex-direction: column;
+        }
+
+        .upperNav {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+            margin-top: 6px;
+        }
+
+        /* ===== TEST SERIES / SERVICE PILL TOGGLE ===== */
+        .pill-toggle-wrapper {
+            margin-left: 4px;
+        }
+
+        .pill-toggle {
+            background: rgba(0, 0, 0, 0.04);
+            border-radius: 100px;
+            display: inline-flex;
+            align-items: center;
+            position: relative;
+            padding: 0;
+            backdrop-filter: blur(4px);
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.02), 0 2px 5px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        .pill-option {
+            position: relative;
+            z-index: 2;
+            padding: 0.45rem 1.2rem;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-radius: 100px;
+            cursor: pointer;
+            transition: color 0.2s ease;
+            background: transparent;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-family: inherit;
+            color: #2c3e4f;
+            text-decoration: none;
+            min-width: 120px;
+            text-align: center;
+        }
+
+        .pill-option i {
+            font-size: 0.9rem;
+        }
+
+        .pill-active-indicator {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 50%;
+            border-radius: 100px;
+            transition: transform 0.28s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            z-index: 1;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        }
+
+        .pill-option.active-option {
+            color: white;
+        }
+
+        .pill-option:not(.active-option) {
+            color: #1f3b4c;
+        }
+
+        .pill-option:hover {
+            transform: scale(0.98);
+        }
+
+        /* Test Series / Service pill - orange active indicator */
+        .pill-toggle-ts .pill-active-indicator {
+            background: #2F4F4F;
+            box-shadow: 0 4px 10px rgba(255, 107, 53, 0.3);
+        }
+
+        .pill-toggle-ts[data-active="testseries"] .pill-active-indicator {
+            transform: translateX(0%);
+        }
+
+        .pill-toggle-ts[data-active="service"] .pill-active-indicator {
+            transform: translateX(100%);
+        }
+
+        .pill-toggle-ts .pill-option:not(.active-option) {
+            color: #fff;
+            background-color: #2F4F4F;
+        }
+
+        /* Certificate button (premium green) — unchanged */
+        .nav-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0.6rem 1.2rem;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.25s ease;
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+            letter-spacing: -0.2px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+        }
+
+        .btn-certificate {
+            background: #0e6b2b;
+            color: white;
+            box-shadow: 0 4px 10px rgba(14, 107, 43, 0.2);
+        }
+
+        .btn-certificate i {
+            font-size: 0.9rem;
+        }
+
+        .btn-certificate:hover {
+            background: #0a561f;
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 10px 20px -5px rgba(14, 107, 43, 0.4);
+        }
+
+        /* Login/Register pill — unchanged (dark blue) */
+        .pill-toggle-lr {
+            background: rgba(0, 0, 0, 0.04);
+        }
+
+        .pill-toggle-lr .pill-active-indicator {
+            background: #083d5d;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        }
+
+        .pill-toggle-lr[data-active="login"] .pill-active-indicator {
+            transform: translateX(0%);
+        }
+
+        .pill-toggle-lr[data-active="register"] .pill-active-indicator {
+            transform: translateX(100%);
+        }
+
+        .pill-toggle-lr .pill-option:not(.active-option) {
+            color: #1f3b4c;
+            
+        }
+
+        /* LOWER NAV (unchanged) */
+        .lowerNav {
+            display: flex;
+            gap: 22px;
+        }
+
+        .lowerNav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        .lowerNav li {
+            position: relative;
+            list-style-type: none;
+        }
+
+        .lowerNav li a {
+            font-size: 0.9rem;
+            transition: all 0.3s ease-in-out;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .menu-link {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            padding: 8px 0;
+            position: relative;
+        }
+
+        .menu-link:hover {
+            color: #083d5d;
+        }
+
+        .menu-link i {
+            margin-right: 0.5rem;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .menu-link:hover i {
+            color: #083d5d;
+            transform: translateY(-2px);
+        }
+
+        @media (min-width: 769px) {
+            .menu-link::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: #2F4F4F;
+                transition: width 0.3s ease;
+            }
+
+            .menu-link:hover::after {
+                width: 100%;
+            }
+        }
+
+        /* MOBILE MENU ICON */
+        .menu-icon {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            cursor: pointer;
+            margin-left: auto;
+            z-index: 1001;
+        }
+
+        .menu-icon span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: var(--primary);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .menu-icon.active span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+
+        .menu-icon.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-icon.active span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 90px;
+            }
+
+            .top-header {
+                display: none;
+            }
+
+            .menu-icon {
+                display: flex;
+            }
+
+            .nav {
+                flex-direction: row;
+                height: auto;
+                padding: 10px 20px;
+            }
+
+            .logo img {
+                height: 70px;
+            }
+
+            .menu {
+                position: fixed;
+                top: 90px;
+                left: 0;
+                width: 100%;
+                height: calc(100vh - 90px);
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(15px);
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                display: none;
+                padding: 30px 20px 20px;
+                overflow-y: auto;
+                z-index: 999;
+                transform: translateX(-100%);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .menu.active {
+                display: flex;
+                transform: translateX(0);
+            }
+
+            .upperNav {
+                flex-direction: column;
+                width: 100%;
+                gap: 15px;
+                margin-bottom: 25px;
+            }
+
+            /* Pill toggles on mobile - full width */
+            .pill-toggle-wrapper {
+                width: 90%;
+                margin: 0 auto;
+            }
+
+            .pill-toggle {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .pill-option {
+                flex: 1;
+                justify-content: center;
+            }
+
+            /* Certificate button full width on mobile */
+            .upperNav .nav-button {
+                width: 90%;
+                text-align: center;
+                justify-content: center;
+                padding: 12px 0;
+            }
+
+            .lowerNav {
+                flex-direction: column;
+                width: 100%;
+                gap: 0;
+                margin-top: 10px;
+            }
+
+            .lowerNav ul {
+                flex-direction: column;
+                gap: 0;
+                width: 100%;
+            }
+
+            .lowerNav li {
+                border-bottom: 1px solid #f0f0f0;
+            }
+
+            .menu-link {
+                padding: 16px 0;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logo img {
+                height: 55px;
+            }
+
+            .menu-link {
+                font-size: 0.9rem;
+            }
+
+            .pill-option {
+                font-size: 0.75rem;
+                padding: 0.35rem 0.8rem;
+            }
+        }
+
+        /* Tech Interview / Naukri pill - green active indicator */
+        .pill-toggle-ti .pill-active-indicator {
+            background: #0e6b2b;
+            box-shadow: 0 4px 10px rgba(14, 107, 43, 0.3);
+        }
+
+        .pill-toggle-ti[data-active="techinterview"] .pill-active-indicator {
+            transform: translateX(0%);
+        }
+
+        .pill-toggle-ti[data-active="naukri"] .pill-active-indicator {
+            transform: translateX(100%);
+        }
+
+        .pill-toggle-ti .pill-option:not(.active-option) {
+            color: #ffffff;
+            background-color: #216c21;
+           
+        }
+
+        /* ===== DESKTOP: TS/Service aur TI/Naukri ko alag buttons dikhao ===== */
+        @media (min-width: 769px) {
+
+            /* Pill wrappers hide karo TS aur TI ke liye */
+            #pillToggleTS,
+            #pillToggleTI {
+                background: transparent;
+                box-shadow: none;
+                overflow: visible;
+                gap: 8px;
+            }
+
+            /* Indicator hide karo desktop par */
+            #pillToggleTS .pill-active-indicator,
+            #pillToggleTI .pill-active-indicator {
+                display: none;
+            }
+
+            /* Har option ko individual button jaisa dikhao */
+            #pillToggleTS .pill-option,
+            #pillToggleTI .pill-option {
+                border-radius: 100px;
+                min-width: auto;
+                color: white !important;
+            }
+
+            /* Test Series - orange button */
+            #pillToggleTS .pill-option[data-value="testseries"] {
+                background: #2F4F4F;
+                box-shadow: 0 6px 14px rgba(255, 107, 53, 0.2);
+            }
+
+            #pillToggleTS .pill-option[data-value="testseries"]:hover {
+                background: #2F4F4F;
+                transform: translateY(-3px) scale(1.02);
+                box-shadow: 0 12px 22px -8px rgba(255, 107, 53, 0.45);
+            }
+
+            /* Service - blue outline button */
+            #pillToggleTS .pill-option[data-value="service"] {
+                background: rgba(77, 168, 218, 0.12);
+                border: 1px solid #4da8da;
+                color: #1f6e93 !important;
+            }
+
+            #pillToggleTS .pill-option[data-value="service"] i {
+                color: #4da8da;
+            }
+
+            #pillToggleTS .pill-option[data-value="service"]:hover {
+                background: #4da8da;
+                color: white !important;
+                transform: translateY(-2px) scale(1.02);
+                box-shadow: 0 8px 18px rgba(77, 168, 218, 0.3);
+                border-color: transparent;
+            }
+
+            #pillToggleTS .pill-option[data-value="service"]:hover i {
+                color: white;
+            }
+
+            /* Tech Interview - green button */
+            #pillToggleTI .pill-option[data-value="techinterview"] {
+                background: #0e6b2b;
+                box-shadow: 0 4px 10px rgba(14, 107, 43, 0.2);
+            }
+
+            #pillToggleTI .pill-option[data-value="techinterview"]:hover {
+                background: #0a561f;
+                transform: translateY(-2px) scale(1.02);
+                box-shadow: 0 10px 20px -5px rgba(14, 107, 43, 0.4);
+            }
+
+            /* Naukri - dark blue outline button */
+            #pillToggleTI .pill-option[data-value="naukri"] {
+                background: rgba(8, 61, 93, 0.1);
+                border: 1px solid #083d5d;
+                color: #083d5d !important;
+            }
+
+            #pillToggleTI .pill-option[data-value="naukri"] i {
+                color: #083d5d;
+            }
+
+            #pillToggleTI .pill-option[data-value="naukri"]:hover {
+                background: #083d5d;
+                color: white !important;
+                transform: translateY(-2px) scale(1.02);
+                box-shadow: 0 8px 18px rgba(8, 61, 93, 0.3);
+                border-color: transparent;
+            }
+
+            #pillToggleTI .pill-option[data-value="naukri"]:hover i {
+                color: white;
+            }
+        }

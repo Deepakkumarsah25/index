@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <title>RRID Tech Private Limited</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/assets/signup.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/common/footer.css">
+    <link rel="stylesheet" href="css/common/header.css">
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER (EJS include) ===== -->
+    <%- include("common/header.ejs") %>
+
+        <!-- ===== LIVE MARQUEE ===== -->
+        <div class="live-marquee">
+            <div class="marquee-track">
+                <span>
+                    <button><a href="/National-Test-Series">All India Test</a></button>
+                    <button><a href="/tech-interview">🏆 CodeRank</a></button>
+                    <button><a href="/rts/dashboard">Test Series</a></button>
+                    <button><a href="/National-Test-Series">All India Test</a></button>
+                    <button><a href="/tech-interview/code-arena">💻 Code Arena</a></button>
+                    <button type="button" onclick="typingsoftware()">⌨️ Typing Software</button>
+                    <button><a href="/rts/dashboard">Test Series</a></button>
+                    <button><a href="/National-Test-Series">All India Test</a></button>
+                    <button><a href="/form?role=teacher">Create Birthday Software</a></button>
+                    <button><a href="/rts/dashboard">Test Series</a></button>
+                    <button><a href="/National-Test-Series">All India Test</a></button>
+                    <button><a href="/form?role=teacher">Create Test</a></button>
+                    <button><a href="/rts/dashboard">Test Series</a></button>
+                    <button><a href="/National-Test-Series">All India Test</a></button>
+                    <button><a href="/tech-interview/code-arena">💻 Code Arena</a></button>
+                    <button><a href="/ebook/?search=&filter=all&sort=newest">E-Book</a></button>
+                    <button><a href="/rts/dashboard">Test Series</a></button>
+                    <button><a href="/National-Test-Series">All India Test</a></button>
+                    <button><a href="/research">Research Papers</a></button>
+                    <button><a href="/rts/dashboard">Test Series</a></button>
+                    <button><a href="/National-Test-Series">All India Test</a></button>
+                    <button>💻 Webinar</button>
+                    <button onclick="workshop()">🤖 Workshop</button>
+                </span>
+                <span>
+                    <button><a href="/tech-interview">🏆 CodeRank</a></button>
+                    <button><a href="/rts/dashboard">Test Series</a></button>
+                    <button type="button" onclick="typingsoftware()">⌨️ Typing Software</button>
+                    <button><a href="/rts/dashboard">Test Series</a></button>
+                    <button><a href="/rts/birthday-software">Create Birthday Software</a></button>
+                    <button><a href="/rts/dashboard">Test Series</a></button>
+                    <button><a href="/tech-interview/code-arena">💻 Code Arena</a></button>
+                    <button><a href="/form?role=teacher">Create Test</a></button>
+                    <button><a href="/rts/dashboard">Test Series</a></button>
+                    <button><a href="/ebook/?search=&filter=all&sort=newest">E-Book</a></button>
+                    <button><a href="/rts/dashboard">Test Series</a></button>
+                    <button><a href="/research">Research Papers</a></button>
+                    <button><a href="/rts/dashboard">Test Series</a></button>
+                    <button>💻 Webinar</button>
+                    <button onclick="workshop()">🤖 Workshop</button>
+                </span>
+            </div>
+            <div class="live-badge"><span class="live-dot"></span>LIVE</div>
+        </div>
+
+        <!-- ===== HERO BANNER ===== -->
+        <section class="bada-hero">
+            <% if (banner && banner.fileType==="video" ) { %>
+                <video autoplay muted loop playsinline class="bada-video">
+                    <source src="<%= banner.fileUrl %>">
+                </video>
+            <% } else if (banner && banner.fileType==="image" ) { %>
+                <img src="<%= banner.fileUrl %>" alt="Banner" class="bada-image">
+            <% } else { %>
+                <video autoplay muted loop playsinline class="bada-video">
+                    <source src="assist/bainar.png">
+                </video>
+            <% } %>
+        </section>
+
+        <!-- ===== CTA BANNER ===== -->
+        <div class="rh-cta" id="hero-section-middle">
+            <a href="/service" class="bada-btn">Explore Services →</a>
+            <a href="/National-Test-Series" class="bada-btn" id="All-India-Test">All India Test →</a>
+            <a href="workshop/form.html" class="bada-btn"><span class="rh-dot"></span>Event Certificate</a>
+        </div>
+
+        <!-- ===== MAIN HERO SECTION ===== -->
+        <div class="hero-section-middle">
+            <div class="wrap">
+
+                <!-- ===== HERO GRID ===== -->
+                <section class="hero-grid">
+
+                    <!-- LEFT -->
+                    <div class="hero-left">
+                        <!-- LEARN. PRACTICE. ACHIEVE. — NOW IN ONE LINE -->
+                        <h1>
+                            Learn. Practice. Achieve. <span class="accent">Succeed Together.</span>
+                        </h1>
+
+                        <div class="hero-swoosh"></div>
+
+                        <p class="hero-sub">
+                            All India Test Series, Coding Challenges, E-Books,
+                            Research Papers, Workshops and more —<br />
+                            Everything you need to excel in one place.
+                        </p>
+
+                        <!-- CTA ROW -->
+                        <div class="cta-row">
+                            <button class="btn btn-primary" onclick="window.location.href='#features'">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M7 4h10v3a5 5 0 0 1-5 5 5 5 0 0 1-5-5V4z" />
+                                    <path d="M7 5H4a1 1 0 0 0-1 1v1a4 4 0 0 0 4 4M17 5h3a1 1 0 0 1 1 1v1a4 4 0 0 1-4 4" />
+                                    <path d="M12 12v4M9 20h6M10 16h4v4h-4z" />
+                                </svg>
+                                All India Test
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M5 12h14M13 6l6 6-6 6" />
+                                </svg>
+                            </button>
+
+                            <button class="btn btn-outline" onclick="window.location.href='#features'">
+                                Explore All
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M5 12h14M13 6l6 6-6 6" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- MINI FEATURES -->
+                        <div class="mini-features">
+                            <div class="mini-feature">
+                                <div class="mini-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="5" y="3" width="14" height="18" rx="2" />
+                                        <path d="M9 3h6v3H9z" />
+                                        <path d="M8 12h8M8 16h5" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4>Test Series</h4>
+                                    <p>Chapter-wise &amp; Full Length</p>
+                                </div>
+                            </div>
+
+                            <div class="mini-feature">
+                                <div class="mini-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M9 7l-5 5 5 5M15 7l5 5-5 5" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4>Code Arena</h4>
+                                    <p>Practice Coding &amp; Skills</p>
+                                </div>
+                            </div>
+
+                            <div class="mini-feature">
+                                <div class="mini-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="1.8" stroke-linejoin="round">
+                                        <path d="M4 6c2-1 5-1 8 0v12c-3-1-6-1-8 0V6zM20 6c-2-1-5-1-8 0v12c3-1 6-1 8 0V6z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4>E-Books</h4>
+                                    <p>5000+ Books &amp; Material</p>
+                                </div>
+                            </div>
+
+                            <div class="mini-feature">
+                                <div class="mini-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round">
+                                        <path d="M7 3h7l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" />
+                                        <path d="M14 3v4h4" />
+                                        <path d="M8.5 13h7M8.5 16.5h7" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4>Research Papers</h4>
+                                    <p>Access Top Research</p>
+                                </div>
+                            </div>
+
+                            <div class="mini-feature">
+                                <div class="mini-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="3" y="4" width="18" height="12" rx="1.5" />
+                                        <path d="M9 20h6M12 16v4" />
+                                        <path d="M7 9l2.5 3L12 9l2.5 3L17 9" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4>Workshops</h4>
+                                    <p>Live &amp; Expert Sessions</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT — professional image with overlay badge (replaces floating badges) -->
+                    <div class="hero-right">
+                        <div class="hero-image-wrap">
+                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&auto=format&fit=crop"
+                                alt="Team collaboration and learning" onerror="this.style.display='none'" />
+                            <!-- Single clean overlay badge -->
+                            <div class="hero-image-badge">
+                                <span class="badge-icon"><i class="fas fa-trophy"></i></span>
+                                <span class="badge-text">
+                                    All India Test Series
+                                    <small>Trusted by 50K+ students</small>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- ===== SECTION DIVIDER ===== -->
+                <div class="section-divider" style="margin: 32px 0 8px;"></div>
+
+                <!-- ===== STATS STRIP ===== -->
+                <section class="stats-strip">
+                    <div class="stat">
+                        <div class="ic">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="9" cy="8" r="3" />
+                                <path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6" />
+                                <circle cx="17" cy="8" r="2.4" />
+                                <path d="M15.5 14.2c2.6.3 4.5 2.4 4.5 5.8" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>50K+</h3>
+                            <p>Active Students</p>
+                        </div>
+                    </div>
+
+                    <div class="stat">
+                        <div class="ic">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="5" y="3" width="14" height="18" rx="2" />
+                                <path d="M9 3h6v3H9z" />
+                                <path d="M8 12h8M8 16h5" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>10K+</h3>
+                            <p>Tests Conducted</p>
+                        </div>
+                    </div>
+
+                    <div class="stat">
+                        <div class="ic">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round">
+                                <path d="M7 4h10v3a5 5 0 0 1-5 5 5 5 0 0 1-5-5V4z" />
+                                <path d="M7 5H4a1 1 0 0 0-1 1v1a4 4 0 0 0 4 4M17 5h3a1 1 0 0 1 1 1v1a4 4 0 0 1-4 4" />
+                                <path d="M12 12v4M9 20h6M10 16h4v4h-4z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>2K+</h3>
+                            <p>Success Stories</p>
+                        </div>
+                    </div>
+
+                    <div class="stat">
+                        <div class="ic">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.6" stroke-linejoin="round">
+                                <path d="M4 6c2-1 5-1 8 0v12c-3-1-6-1-8 0V6zM20 6c-2-1-5-1-8 0v12c3-1 6-1 8 0V6z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>5K+</h3>
+                            <p>E-Books &amp; Resources</p>
+                        </div>
+                    </div>
+
+                    <div class="stat">
+                        <div class="ic">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round">
+                                <circle cx="12" cy="12" r="9" />
+                                <path d="M3 12h18M12 3c2.5 2.5 4 6 4 9s-1.5 6.5-4 9c-2.5-2.5-4-6-4-9s1.5-6.5 4-9z" />
+                            </svg>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- ===== SECTION DIVIDER ===== -->
+                <div class="section-divider" style="margin: 32px 0 8px;"></div>
+
+                <!-- ===== FEATURES SECTION ===== -->
+                <section class="features-section" id="features">
+                    <div class="section-label">
+                        <span class="dot"></span> All India Test
+                    </div>
+                    <h2 class="section-title">
+                        Everything You Need to <span class="accent">Excel</span>
+                    </h2>
+                    <p class="section-desc">
+                        From coding challenges to research papers — all in one place.
+                    </p>
+
+                    <div class="feature-grid">
+
+                        <!-- Code Arena -->
+                        <div class="feature-card">
+                            <div class="fc-icon blue">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 7l-5 5 5 5M15 7l5 5-5 5" />
+                                </svg>
+                            </div>
+                            <h3>Code Arena</h3>
+                            <p>Practice coding challenges, improve problem-solving skills, and compete with peers.</p>
+                            <button class="visit-btn" onclick="window.location.href='/tech-interview/code-arena'">
+                                <span class="btn-text">Visit</span>
+                                <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
+                            </button>
+                        </div>
+
+                        <!-- Research Papers -->
+                        <div class="feature-card">
+                            <div class="fc-icon gold">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round">
+                                    <path d="M7 3h7l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" />
+                                    <path d="M14 3v4h4" />
+                                    <path d="M8.5 13h7M8.5 16.5h7" />
+                                </svg>
+                            </div>
+                            <h3>Research Papers</h3>
+                            <p>Access top research papers across domains and stay ahead in your field.</p>
+                            <button class="visit-btn" onclick="window.location.href='/research'">
+                                <span class="btn-text">Visit</span>
+                                <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
+                            </button>
+                        </div>
+
+                        <!-- Workshops -->
+                        <div class="feature-card">
+                            <div class="fc-icon purple">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="4" width="18" height="12" rx="1.5" />
+                                    <path d="M9 20h6M12 16v4" />
+                                    <path d="M7 9l2.5 3L12 9l2.5 3L17 9" />
+                                </svg>
+                            </div>
+                            <h3>Workshops</h3>
+                            <p>Live workshops and expert sessions to sharpen your practical skills.</p>
+                            <button class="visit-btn" onclick="window.location.href='workshop/form.html'">
+                                <span class="btn-text">Visit</span>
+                                <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
+                            </button>
+                        </div>
+
+                        <!-- Test Series -->
+                        <div class="feature-card">
+                            <div class="fc-icon teal">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="5" y="3" width="14" height="18" rx="2" />
+                                    <path d="M9 3h6v3H9z" />
+                                    <path d="M8 12h8M8 16h5" />
+                                </svg>
+                            </div>
+                            <h3>Test Series</h3>
+                            <p>Chapter-wise and full-length tests to track your progress and ace exams.</p>
+                            <button class="visit-btn" onclick="window.location.href='/rts/dashboard'">
+                                <span class="btn-text">Visit</span>
+                                <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
+                            </button>
+                        </div>
+
+                        <!-- E-Books -->
+                        <div class="feature-card">
+                            <div class="fc-icon orange">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.8" stroke-linejoin="round">
+                                    <path d="M4 6c2-1 5-1 8 0v12c-3-1-6-1-8 0V6zM20 6c-2-1-5-1-8 0v12c3-1 6-1 8 0V6z" />
+                                </svg>
+                            </div>
+                            <h3>E-Books</h3>
+                            <p>Access 5000+ e-books and study materials curated by top educators.</p>
+                            <button class="visit-btn" onclick="window.location.href='/ebook/?search=&filter=all&sort=newest'">
+                                <span class="btn-text">Visit</span>
+                                <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
+                            </button>
+                        </div>
+
+                        <!-- All India Test -->
+                        <div class="feature-card">
+                            <div class="fc-icon pink">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round">
+                                    <path d="M7 4h10v3a5 5 0 0 1-5 5 5 5 0 0 1-5-5V4z" />
+                                    <path d="M7 5H4a1 1 0 0 0-1 1v1a4 4 0 0 0 4 4M17 5h3a1 1 0 0 1 1 1v1a4 4 0 0 1-4 4" />
+                                    <path d="M12 12v4M9 20h6M10 16h4v4h-4z" />
+                                </svg>
+                            </div>
+                            <h3>All India Test</h3>
+                            <p>Compete with students across India and benchmark your performance.</p>
+                            <button class="visit-btn" onclick="window.location.href='/National-Test-Series'">
+                                <span class="btn-text">Visit</span>
+                                <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
+                            </button>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- ===== SECTION DIVIDER ===== -->
+                <div class="section-divider" style="margin: 36px 0 8px;"></div>
+
+                <!-- ============================================================
+                ===== TOOLS SECTION — 3D FLIP CARDS (ENHANCED) =====
+                ============================================================ -->
+                <section class="tools-section" id="tools-section">
+                    <div class="section-label">
+                        <span class="dot"></span> Free Tools
+                    </div>
+                    <h2 class="section-title">
+                        Powerful <span class="accent">Toolkit</span> at Your Fingertips
+                    </h2>
+                    <p class="section-desc">
+                        Click any card to flip it 360° and explore all the tools inside. Each button is ready to use.
+                    </p>
+
+                    <div class="tools-grid">
+
+                        <!-- ===== CARD 1: Image Tools ===== -->
+                        <div class="flip-card" data-category="image">
+                            <div class="flip-card-inner">
+                                <!-- FRONT -->
+                                <div class="flip-card-front" onclick="toggleFlip(this.closest('.flip-card'), event)">
+                                    <div class="tool-icon">
+                                        <i class="fas fa-image"></i>
+                                    </div>
+                                    <h3>Image Tools</h3>
+                                    <p>Convert, compress, resize, crop &amp; more</p>
+                                    <div class="flip-hint">
+                                        <i class="fas fa-rotate-right"></i> Click to flip
+                                    </div>
+                                </div>
+                                <!-- BACK -->
+                                <div class="flip-card-back">
+                                    <div class="back-header">
+                                        <i class="fas fa-image"></i>
+                                        <h4>Image Tools</h4>
+                                        <span class="badge-count">7 tools</span>
+                                    </div>
+                                    <div class="tools-list">
+                                        <button class="tool-btn" onclick="event.stopPropagation();convertimage()">
+                                            <span class="btn-label"><i class="fas fa-exchange-alt"></i><span class="btn-text">Convert Image</span></span>
+                                            <span class="btn-arrow"><i class="fas fa-arrow-right"></i></span>
+                                        </button>
+                                        <button class="tool-btn" onclick="event.stopPropagation();compress()">
+                                            <span class="btn-label"><i class="fas fa-compress-alt"></i><span class="btn-text">Compress Image</span></span>
+                                            <span class="btn-arrow"><i class="fas fa-arrow-right"></i></span>
+                                        </button>
+                                        <button class="tool-btn" onclick="event.stopPropagation();resize()">
+                                            <span class="btn-label"><i class="fas fa-expand-arrows-alt"></i><span class="btn-text">Resize Image</span></span>
+                                            <span class="btn-arrow"><i class="fas fa-arrow-right"></i></span>
+                                        </button>
+                                        <button class="tool-btn" onclick="event.stopPropagation();convert()">
+                                            <span class="btn-label"><i class="fas fa-file-pdf"></i><span class="btn-text">Image to PDF</span></span>
+                                            <span class="btn-arrow"><i class="fas fa-arrow-right"></i></span>
+                                        </button>
+                                        <button class="tool-btn" onclick="event.stopPropagation();crop()">
+                                            <span class="btn-label"><i class="fas fa-crop-alt"></i><span class="btn-text">Crop Image</span></span>
+                                            <span class="btn-arrow"><i class="fas fa-arrow-right"></i></span>
+                                        </button>
+                                        <button class="tool-btn" onclick="event.stopPropagation();image()">
+                                            <span class="btn-label"><i class="fas fa-eye"></i><span class="btn-text">Image to Text (OCR)</span></span>
+                                            <span class="btn-arrow"><i class="fas fa-arrow-right"></i></span>
+                                        </button>
+                                        <button class="tool-btn" onclick="event.stopPropagation();merge()">
+                                            <span class="btn-label"><i class="fas fa-object-group"></i><span class="btn-text">Merge Images</span></span>
+                                            <span class="btn-arrow"><i class="fas fa-arrow-right"></i></span>
+                                        </button>
+                                    </div>
+                                    <div class="close-hint" onclick="this.closest('.flip-card').classList.remove('flipped')">
+                                        <i class="fas fa-rotate-left"></i> Click to flip back
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ===== CARD 2: PDF Tools ===== -->
+                        <div class="flip-card" data-category="pdf">
+                            <div class="flip-card-inner">
+                                <!-- FRONT -->
+                                <div class="flip-card-front" onclick="toggleFlip(this.closest('.flip-card'), event)">
+                                    <div class="tool-icon">
+                                        <i class="fas fa-file-pdf"></i>
+                                    </div>
+                                    <h3>PDF Tools</h3>
+                                    <p>Convert, split, compress &amp; export PDFs</p>
+                                    <div class="flip-hint">
+                                        <i class="fas fa-rotate-right"></i> Click to flip
+                                    </div>
+                                </div>
+                                <!-- BACK -->
+                                <div class="flip-card-back">
+                                    <div class="back-header">
+                                        <i class="fas fa-file-pdf"></i>
+                                        <h4>PDF Tools</h4>
+                                        <span class="badge-count">5 tools</span>
+                                    </div>
+                                    <div class="tools-list">
+                                        <button class="tool-btn" onclick="event.stopPropagation();convertPDFtoExcel()">
+                                            <span class="btn-label"><i class="fas fa-file-excel"></i><span class="btn-text">PDF to Excel</span></span>
+                                            <span class="btn-arrow"><i class="fas fa-arrow-right"></i></span>
+                                        </button>
+                                        <button class="tool-btn" onclick="event.stopPropagation();convertExceltoPDF()">
+                                            <span class="btn-label"><i class="fas fa-file-pdf"></i><span class="btn-text">Excel to PDF</span></span>
+                                            <span class="btn-arrow"><i class="fas fa-arrow-right"></i></span>
+                                        </button>
+                                        <button class="tool-btn" onclick="event.stopPropagation();splitPDF()">
+                                            <span class="btn-label"><i class="fas fa-cut"></i><span class="btn-text">Split PDF</span></span>
+                                            <span class="btn-arrow"><i class="fas fa-arrow-right"></i></span>
+                                        </button>
+                                        <button class="tool-btn" onclick="event.stopPropagation();compressPDF()">
+                                            <span class="btn-label"><i class="fas fa-compress-alt"></i><span class="btn-text">Compress PDF</span></span>
+                                            <span class="btn-arrow"><i class="fas fa-arrow-right"></i></span>
+                                        </button>
+                                        <button class="tool-btn" onclick="event.stopPropagation();pDFtojPG()">
+                                            <span class="btn-label"><i class="fas fa-image"></i><span class="btn-text">PDF to JPG</span></span>
+                                            <span class="btn-arrow"><i class="fas fa-arrow-right"></i></span>
+                                        </button>
+                                    </div>
+                                    <div class="close-hint" onclick="this.closest('.flip-card').classList.remove('flipped')">
+                                        <i class="fas fa-rotate-left"></i> Click to flip back
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ===== CARD 3: Text Utility Tools ===== -->
+                        <div class="flip-card" data-category="text">
+                            <div class="flip-card-inner">
+                                <!-- FRONT -->
+                                <div class="flip-card-front" onclick="toggleFlip(this.closest('.flip-card'), event)">
+                                    <div class="tool-icon">
+                                        <i class="fas fa-font"></i>
+                                    </div>
+                                    <h3>Text Utilities</h3>
+                                    <p>Count, check grammar, convert case &amp; more</p>
+                                    <div class="flip-hint">
+                                        <i class="fas fa-rotate-right"></i> Click to flip
+                                    </div>
+                                </div>
+                                <!-- BACK -->
+                                <div class="flip-card-back">
+                                    <div class="back-header">
+                                        <i class="fas fa-font"></i>
+                                        <h4>Text Utilities</h4>
+                                        <span class="badge-count">7 tools</span>
+                                    </div>
+                                    <div class="tools-list">
+                                        <button class="tool-btn" onclick="event.stopPropagation();wordCounter()">
+                                            <span class="btn-label"><i class="fas fa-calculator"></i><span class="btn-text">Word Counter</span></span>
+                                            <span class="btn-arrow"><i class="fas fa-arrow-right"></i></span>
+                                        </button>
+                                        <button class="tool-btn" onclick="event.stopPropagation();characterCounter()">
+                                            <span class="btn-label"><i class="fas fa-sort-alpha-up"></i><span class="btn-text">Character Counter</span></span>
+                                            <span class="btn-arrow"><i class="fas fa-arrow-right"></i></span>
+                                        </button>
+                                        <button class="tool-btn" onclick="event.stopPropagation();grammarChecker()">
+                                            <span class="btn-label"><i class="fas fa-check-double"></i><span class="btn-text">Grammar Checker</span></span>
+                                            <span class="btn-arrow"><i class="fas fa-arrow-right"></i></span>
+                                        </button>
+                                        <button class="tool-btn" onclick="event.stopPropagation();plagiarismChecker()">
+                                            <span class="btn-label"><i class="fas fa-copy"></i><span class="btn-text">Plagiarism Checker</span></span>
+                                            <span class="btn-arrow"><i class="fas fa-arrow-right"></i></span>
+                                        </button>
+                                        <button class="tool-btn" onclick="event.stopPropagation();caseConverter()">
+                                            <span class="btn-label"><i class="fas fa-text-height"></i><span class="btn-text">Case Converter</span></span>
+                                            <span class="btn-arrow"><i class="fas fa-arrow-right"></i></span>
+                                        </button>
+                                        <button class="tool-btn" onclick="event.stopPropagation();textToSpeech()">
+                                            <span class="btn-label"><i class="fas fa-volume-up"></i><span class="btn-text">Text to Speech</span></span>
+                                            <span class="btn-arrow"><i class="fas fa-arrow-right"></i></span>
+                                        </button>
+                                        <button class="tool-btn" onclick="event.stopPropagation();speechToText()">
+                                            <span class="btn-label"><i class="fas fa-microphone"></i><span class="btn-text">Speech to Text</span></span>
+                                            <span class="btn-arrow"><i class="fas fa-arrow-right"></i></span>
+                                        </button>
+                                    </div>
+                                    <div class="close-hint" onclick="this.closest('.flip-card').classList.remove('flipped')">
+                                        <i class="fas fa-rotate-left"></i> Click to flip back
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- ===== SECTION DIVIDER ===== -->
+                <div class="section-divider" style="margin: 36px 0 8px;"></div>
+
+            </div>
+        </div>
+
+        <!-- ============================================================
+        ===== TOOLS & TECHNOLOGY SECTION — CLEAN, NO TRIANGLE, PROPER SCROLL =====
+        ============================================================ -->
+        <div class="tools-and-technology-section">
+            <div class="container">
+                <div class="row">
+
+                    <!-- LEFT: Content -->
+                    <div class="col-md-6">
+                        <div class="section-title-wrap">
+                            <p class="section-sub-title">TOOLS AND TECHNOLOGY</p>
+                            <h2 class="heading">
+                                Technologies We Use for <br><span class="text-color-primary">Software &amp; App Development</span>
+                            </h2>
+                            <div class="mt-4">
+                                <button class="btn-custom" onclick="window.location.href='#'">
+                                    Talk To Our Experts <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: Animated Tech Logos -->
+                    <div class="col-md-6">
+                        <div class="technologies-items">
+
+                            <!-- Column 1 -->
+                            <div class="technologies-list web-app-tech">
+                                <div class="technologies-list-wrap">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/919/919827.png" alt="HTML">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/919/919826.png" alt="CSS">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/919/919828.png" alt="JS">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/1126/1126012.png" alt="React">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/919/919827.png" alt="HTML">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/919/919826.png" alt="CSS">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/919/919828.png" alt="JS">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/1126/1126012.png" alt="React">
+                                </div>
+                            </div>
+
+                            <!-- Column 2 -->
+                            <div class="technologies-list front-end-tech">
+                                <div class="technologies-list-wrap">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968322.png" alt="Node">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/919/919832.png" alt="TS">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968381.png" alt="Vue">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="Figma">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968322.png" alt="Node">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/919/919832.png" alt="TS">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968381.png" alt="Vue">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="Figma">
+                                </div>
+                            </div>
+
+                            <!-- Column 3 -->
+                            <div class="technologies-list back-end-tech">
+                                <div class="technologies-list-wrap">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/919/919836.png" alt="PHP">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968313.png" alt="MySQL">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968332.png" alt="Docker">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968242.png" alt="AWS">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/919/919836.png" alt="PHP">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968313.png" alt="MySQL">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968332.png" alt="Docker">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968242.png" alt="AWS">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        
+    <div id="section">
+      <canvas id="bg"></canvas>
+      <div class="content">
+        <p class="eyebrow" id="eyebrow">Why Choose Us </p>
+        <h2 class="headline" id="headline">
+          <span>Building the Future</span> with Scalable IT Solutions.
+        </h2>
+        <p class="sub" id="sub">
+          In today's dynamic digital world, choosing a trusted Software Development
+          Company is key to business success. At RID TECH, we go beyond coding,
+          delivering scalable, secure, and future-ready solutions.
+        </p>
+        <div class="grid" id="grid">
+
+          <div class="card">
+            <div class="icon-wrap">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="8" r="4" />
+                <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+                <path d="M17 8l2 2 4-4" />
+              </svg>
+            </div>
+            <div class="card-title">Personalized Solutions</div>
+            <div class="card-desc">We build custom software solutions that perfectly match your unique goals, ensuring
+              scalability, growth, and business alignment.</div>
+          </div>
+
+          <div class="card">
+            <div class="icon-wrap">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                <path d="M2 17l10 5 10-5" />
+                <path d="M2 12l10 5 10-5" />
+              </svg>
+            </div>
+            <div class="card-title">Proven Expertise</div>
+            <div class="card-desc">Our expert team with 6+ years of industry experience and innovation to deliver smart,
+              high-performing, and value-driven software solutions.</div>
+          </div>
+
+          <div class="card">
+            <div class="icon-wrap">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7z" />
+                <circle cx="12" cy="9" r="2.5" />
+              </svg>
+            </div>
+            <div class="card-title">Cutting-Edge Technology</div>
+            <div class="card-desc">We use AI, ML, cloud, Full Stack and blockchain to deliver secure, future-ready
+              software solutions that keep your business competitive.</div>
+          </div>
+
+          <div class="card">
+            <div class="icon-wrap">
+              <svg viewBox="0 0 24 24">
+                <rect x="5" y="2" width="14" height="20" rx="2" />
+                <path d="M9 6h6M9 10h6M9 14h4" />
+              </svg>
+            </div>
+            <div class="card-title">Dedicated Development Team</div>
+            <div class="card-desc">Our dedicated development team works like your own speed, high performance, quality,
+              and flexibility through every stage of your project.</div>
+          </div>
+
+          <div class="card">
+            <div class="icon-wrap">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.9 19a19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2 4.11 2 2 0 0 1 3.76 2h3a2 2 0 0 1 2 1.72c.127.96.36 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+            </div>
+            <div class="card-title">Excellent 24/7 Support</div>
+            <div class="card-desc">Our support team is always available to meet client’s expectations, provide updates,
+              and ensure everything, so your business never misses a beat.</div>
+          </div>
+
+          <div class="card">
+            <div class="icon-wrap">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="M9 12l2 2 4-4" />
+              </svg>
+            </div>
+            <div class="card-title">Quality Deliverance</div>
+            <div class="card-desc">We deliver top software development that meets high-quality solutions that meet the
+              highest standards of performance, security, and user experience.</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <section class="community-section">
+
+      <div class="unit-cell-container cell-1">
+        <div class="cube">
+          <div class="face front"></div>
+          <div class="face back"></div>
+          <div class="face right"></div>
+          <div class="face left"></div>
+          <div class="face top"></div>
+          <div class="face bottom"></div>
+        </div>
+      </div>
+
+      <div class="unit-cell-container cell-2">
+        <div class="cube">
+          <div class="face front"></div>
+          <div class="face back"></div>
+          <div class="face right"></div>
+          <div class="face left"></div>
+          <div class="face top"></div>
+          <div class="face bottom"></div>
+        </div>
+      </div>
+
+      <div class="unit-cell-container cell-3">
+        <div class="cube">
+          <div class="face front"></div>
+          <div class="face back"></div>
+          <div class="face right"></div>
+          <div class="face left"></div>
+          <div class="face top"></div>
+          <div class="face bottom"></div>
+        </div>
+      </div>
+
+      <div class="unit-cell-container cell-4">
+        <div class="cube">
+          <div class="face front"></div>
+          <div class="face back"></div>
+          <div class="face right"></div>
+          <div class="face left"></div>
+          <div class="face top"></div>
+          <div class="face bottom"></div>
+        </div>
+      </div>
+
+      <div class="unit-cell-container cell-5">
+        <div class="cube">
+          <div class="face front"></div>
+          <div class="face back"></div>
+          <div class="face right"></div>
+          <div class="face left"></div>
+          <div class="face top"></div>
+          <div class="face bottom"></div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="community-content">
+
+          <div class="community-text">
+            <div class="rsc-badge">RSC — Scientific Network</div>
+
+            <h2>RRID SCIENTIFIC<br><span>COMMUNITY</span></h2>
+
+            <p class="description">
+              Welcome to the RRID Scientific Community (RSC). At RSC, we are dedicated to discovering, developing, and
+              innovating cutting-edge technologies that shape the future. Our community brings together visionary
+              researchers, industry leaders, and passionate innovators to tackle global challenges and advance
+              scientific
+              progress. Join us as we explore new horizons and drive meaningful change through science and technology.
+              Together, we innovate for a better tomorrow.
+            </p>
+
+            <div class="topics-section">
+              <div class="topics-label">VISIT TOPICS</div>
+              <div class="topics">
+                <a href="/ebook/?search=html&filter=all&sort=newest" class="topic"><span>HTML</span></a>
+                <a href="/ebook/?search=css&filter=all&sort=newest" class="topic"><span>CSS</span></a>
+                <a href="/ebook/?search=python&filter=all&sort=newest" class="topic"><span>Python</span></a>
+                <a href="/ebook/?search=english&filter=all&sort=newest" class="topic"><span>English</span></a>
+                <a href="/ebook/?search=react&filter=all&sort=newest" class="topic"><span>React JS</span></a>
+                <a href="/ebook/?search=javascript&filter=all&sort=newest" class="topic"><span>JavaScript</span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="community-image">
+            <div class="image-wrapper">
+              <img src="/assets/images/ridtechlogo.png" alt="Technology Image"
+                onerror="this.src='https://via.placeholder.com/600x400/0b1a2e/00e0a0?text=High-Tech+Lab'">
+              <div class="image-overlay"></div>
+            </div>
+
+            <div class="stat-card left">
+              <span class="stat-icon">🔬</span>
+              <div>
+                <div class="stat-label">Researchers</div>
+                <div class="stat-value">100+</div>
+              </div>
+            </div>
+
+            <div class="stat-card right">
+              <span class="stat-icon">📚</span>
+              <div>
+                <div class="stat-label">Topics</div>
+                <div class="stat-value">20+ Courses</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+        <!-- ===== FOOTER (EJS include) ===== -->
+        <%- include("common/footer.ejs") %>
+
+            <!-- ============================================================
+            SCRIPTS
+            ============================================================ -->
+            <script>
+                // ============================================================
+                // FLIP CARD — only the clicked card flips, buttons are safe
+                // ============================================================
+                function toggleFlip(card, event) {
+                    // If click came from a button or close-hint, ignore
+                    if (event && event.target) {
+                        if (event.target.closest('.tool-btn') ||
+                            event.target.closest('.close-hint') ||
+                            event.target.closest('.back-header') ||
+                            event.target.closest('.tools-list')) {
+                            return;
+                        }
+                    }
+                    if (!card) return;
+                    // Toggle flipped state on this card only
+                    card.classList.toggle('flipped');
+                }
+
+                // Close flipped cards when clicking outside (anywhere on document)
+                document.addEventListener('click', function(e) {
+                    const cards = document.querySelectorAll('.flip-card.flipped');
+                    cards.forEach(card => {
+                        // If click is not inside this card, close it
+                        if (!card.contains(e.target)) {
+                            card.classList.remove('flipped');
+                        }
+                    });
+                });
+
+                // Also close flipped cards on Escape key
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape') {
+                        document.querySelectorAll('.flip-card.flipped').forEach(c => c.classList.remove('flipped'));
+                    }
+                });
+
+                // ============================================================
+                // RIPPLE EFFECT on tool buttons (professional click feedback)
+                // ============================================================
+                document.addEventListener('click', function(e) {
+                    const btn = e.target.closest('.tool-btn');
+                    if (!btn) return;
+                    // Create ripple element
+                    const ripple = document.createElement('span');
+                    ripple.className = 'ripple';
+                    const rect = btn.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    ripple.style.width = ripple.style.height = size + 'px';
+                    ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+                    ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+                    btn.style.position = 'relative';
+                    btn.style.overflow = 'hidden';
+                    btn.appendChild(ripple);
+                    // Remove after animation
+                    setTimeout(() => ripple.remove(), 500);
+                });
+
+                // ============================================================
+                // NAVIGATION HELPERS
+                // ============================================================
+                function workshop() {
+                    window.open("workshop/form.html", "_self");
+                }
+
+                function typingsoftware() {
+                    window.location.href = "/typing-software";
+                }
+
+                // ===== IMAGE TOOLS =====
+                function compress() { window.location.href = "/image-tools"; }
+
+                function convert() { window.location.href = "/convertpdf"; }
+
+                function convertimage() { window.location.href = "/convertimage"; }
+
+                function resize() { window.location.href = "/resize"; }
+
+                function crop() { window.location.href = "/cropimage"; }
+
+                function merge() { window.location.href = "/mergeimage"; }
+
+                function image() { window.location.href = "/textocr"; }
+
+                function backgroundRemover() { window.location.href = "/imagebackgroundremover"; }
+
+                // ===== PDF TOOLS =====
+                function converterpdftoword() { window.location.href = "/converterpdf"; }
+
+                function converterpdf() { window.location.href = "/converterpdf"; }
+
+                function convertPDFtoExcel() { window.location.href = "/converterpdf"; }
+
+                function convertExceltoPDF() { window.location.href = "/convertexcel"; }
+
+                function mergePDF() { window.location.href = "/mergepdf"; }
+
+                function splitPDF() { window.location.href = "/splitpdf"; }
+
+                function pDFtojPG() { window.location.href = "/pdfjpg"; }
+
+                function addPasswordToPDF() { window.location.href = "/addpasswordtopdf"; }
+
+                function removePasswordFromPDF() { window.location.href = "/removepassword"; }
+
+                function compressPDF() { window.location.href = "/com"; }
+
+                // ===== TEXT UTILITIES =====
+                function wordCounter() { window.location.href = "/wordcounter"; }
+
+                function characterCounter() { window.location.href = "/charactercounter"; }
+
+                function grammarChecker() { window.location.href = "/grammarchecker"; }
+
+                function plagiarismChecker() { window.location.href = "/plagiarismchecker"; }
+
+                function caseConverter() { window.location.href = "/caseconverter"; }
+
+                function textToSpeech() { window.location.href = "/texttospeech"; }
+
+                function speechToText() { window.location.href = "/speechtotext"; }
+
+                function handwritingToText() { window.location.href = "/handwritingtotext"; }
+
+                // ===== PARTICLES (rhParticles) =====
+                (function() {
+                    var c = document.getElementById('rhParticles');
+                    if (!c) return;
+                    var cols = ['#4da8da', '#ff6b35', '#fff', '#a8dcf5', '#ffb28b'];
+                    for (var i = 0; i < 32; i++) {
+                        var p = document.createElement('div');
+                        p.className = 'rh-p';
+                        var s = Math.random() * 5 + 2,
+                            col = cols[Math.floor(Math.random() * cols.length)];
+                        p.style.cssText = 'width:' + s + 'px;height:' + s + 'px;background:' + col +
+                            ';left:' + Math.random() * 100 + '%;bottom:-20px' +
+                            ';animation-duration:' + (Math.random() * 10 + 8) + 's' +
+                            ';animation-delay:' + (Math.random() * 15) + 's' +
+                            ';box-shadow:0 0 ' + (s * 3) + 'px ' + col + ';opacity:0';
+                        c.appendChild(p);
+                    }
+                })();
+
+                // ===== CANVAS NETWORK =====
+                const canvas = document.getElementById('bg');
+                if (canvas) {
+                    const ctx = canvas.getContext('2d');
+                    let W, H, pts = [];
+
+                    function resize() {
+                        W = canvas.width = canvas.offsetWidth;
+                        H = canvas.height = canvas.offsetHeight;
+                    }
+                    resize();
+                    window.addEventListener('resize', () => {
+                        resize();
+                        pts = [];
+                        for (let i = 0; i < 120; i++) pts.push(mkPt());
+                    });
+
+                    function mkPt() {
+                        return {
+                            x: Math.random() * W,
+                            y: Math.random() * H,
+                            vx: (Math.random() - .5) * 2.2,
+                            vy: (Math.random() - .5) * 2.2,
+                            r: Math.random() * 2 + .8,
+                            pulse: Math.random() * Math.PI * 2
+                        };
+                    }
+                    for (let i = 0; i < 120; i++) pts.push(mkPt());
+
+                    let hexPhase = 0;
+
+                    function drawHexes() {
+                        hexPhase += 0.018;
+                        for (let i = 0; i < 7; i++) {
+                            const cx = W * .05 + i * (W * .16);
+                            const cy = H * .35 + Math.sin(hexPhase + i * 0.9) * H * .18;
+                            const r = 55 + Math.cos(hexPhase * 1.3 + i) * 20;
+                            ctx.beginPath();
+                            for (let a = 0; a < 6; a++) {
+                                const ang = a * Math.PI / 3 - Math.PI / 6;
+                                a === 0 ?
+                                    ctx.moveTo(cx + r * Math.cos(ang), cy + r * Math.sin(ang)) :
+                                    ctx.lineTo(cx + r * Math.cos(ang), cy + r * Math.sin(ang));
+                            }
+                            ctx.closePath();
+                            const alpha = 0.04 + Math.abs(Math.sin(hexPhase + i)) * 0.06;
+                            ctx.fillStyle = `rgba(30,200,168,${alpha})`;
+                            ctx.strokeStyle = `rgba(30,200,168,${alpha * 2})`;
+                            ctx.lineWidth = .6;
+                            ctx.fill();
+                            ctx.stroke();
+                        }
+                    }
+
+                    function drawNet() {
+                        ctx.clearRect(0, 0, W, H);
+                        drawHexes();
+
+                        for (let i = 0; i < pts.length; i++) {
+                            const p = pts[i];
+                            p.pulse += 0.06;
+
+                            for (let j = i + 1; j < pts.length; j++) {
+                                const q = pts[j];
+                                const dx = p.x - q.x,
+                                    dy = p.y - q.y;
+                                const d = Math.sqrt(dx * dx + dy * dy);
+                                if (d < 120) {
+                                    const a = (1 - d / 120) * .55;
+                                    ctx.strokeStyle = `rgba(30,200,168,${a})`;
+                                    ctx.lineWidth = .6;
+                                    ctx.beginPath();
+                                    ctx.moveTo(p.x, p.y);
+                                    ctx.lineTo(q.x, q.y);
+                                    ctx.stroke();
+                                }
+                            }
+
+                            const pr = p.r + Math.sin(p.pulse) * .6;
+                            ctx.beginPath();
+                            ctx.arc(p.x, p.y, pr, 0, Math.PI * 2);
+                            ctx.fillStyle = 'rgba(30,200,168,0.75)';
+                            ctx.fill();
+
+                            p.x += p.vx;
+                            p.y += p.vy;
+                            if (p.x < 0 || p.x > W) p.vx *= -1;
+                            if (p.y < 0 || p.y > H) p.vy *= -1;
+                        }
+
+                        requestAnimationFrame(drawNet);
+                    }
+                    drawNet();
+                }
+
+                // ===== GSAP ANIMATIONS (safe) =====
+                if (typeof gsap !== 'undefined') {
+                    // Animate feature cards with stagger
+                    gsap.from('.feature-card', {
+                        opacity: 0,
+                        y: 40,
+                        duration: 0.7,
+                        stagger: 0.1,
+                        ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: '.feature-grid',
+                            start: 'top 85%',
+                            toggleActions: 'play none none none'
+                        }
+                    });
+
+                    // Animate flip cards on scroll
+                    gsap.from('.flip-card', {
+                        opacity: 0,
+                        y: 50,
+                        duration: 0.7,
+                        stagger: 0.12,
+                        ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: '.tools-grid',
+                            start: 'top 88%',
+                            toggleActions: 'play none none none'
+                        }
+                    });
+
+                    // Animate tools & technology section
+                    gsap.from('.tools-and-technology-section .section-title-wrap', {
+                        opacity: 0,
+                        x: -30,
+                        duration: 0.7,
+                        ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: '.tools-and-technology-section',
+                            start: 'top 88%',
+                            toggleActions: 'play none none none'
+                        }
+                    });
+
+                    gsap.from('.tools-and-technology-section .technologies-items', {
+                        opacity: 0,
+                        x: 40,
+                        duration: 0.8,
+                        ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: '.tools-and-technology-section',
+                            start: 'top 88%',
+                            toggleActions: 'play none none none'
+                        }
+                    });
+
+                    // Also handle any existing .card animations if needed
+                    gsap.set('.card', { y: 30 });
+                    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+                    tl.from('#eyebrow', { y: -15, opacity: 0, duration: .4, delay: .1 })
+                        .from('#headline', { y: 20, opacity: 0, duration: .6 }, '-=.2')
+                        .from('#sub', { y: 15, opacity: 0, duration: .5 }, '-=.3')
+                        .to('.card', {
+                            opacity: 1,
+                            y: 0,
+                            duration: .5,
+                            stagger: .08,
+                            ease: 'back.out(1.4)'
+                        }, '-=.2');
+
+                    gsap.to('.icon-wrap', {
+                        y: -4,
+                        duration: 1.4,
+                        ease: 'sine.inOut',
+                        yoyo: true,
+                        repeat: -1,
+                        stagger: { each: .3 }
+                    });
+
+                    document.querySelectorAll('.card').forEach(c => {
+                        c.addEventListener('mouseenter', () => {
+                            gsap.to(c.querySelector('.icon-wrap'), {
+                                scale: 1.12,
+                                duration: .25,
+                                ease: 'power2.out',
+                                boxShadow: '0 6px 28px rgba(30,200,168,0.5)'
+                            });
+                            gsap.to(c.querySelector('.card-title'), { color: '#1EC8A8', duration: .2 });
+                        });
+                        c.addEventListener('mouseleave', () => {
+                            gsap.to(c.querySelector('.icon-wrap'), {
+                                scale: 1,
+                                duration: .3,
+                                ease: 'power2.inOut'
+                            });
+                            gsap.to(c.querySelector('.card-title'), { color: '#ffffff', duration: .2 });
+                        });
+                    });
+                }
+
+                // ===== TOOLS SCROLL =====
+                function tools() {
+                    const section = document.getElementById("tools-section");
+                    if (section) {
+                        const yOffset = -120;
+                        const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                        window.scrollTo({ top: y, behavior: "smooth" });
+                    }
+                }
+
+                // ===== RESIZE SAFETY =====
+                window.addEventListener('resize', function() {
+                    const banner = document.querySelector('.bada-hero');
+                    if (banner) {
+                        banner.style.maxWidth = '100vw';
+                    }
+                });
+            </script>
+
+            <!-- GSAP CDN (safe fallback) -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js">
+            </script>
+            <!-- ScrollTrigger plugin for card animations -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js">
+            </script>
+            <script>
+                // Register ScrollTrigger plugin
+                if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+                    gsap.registerPlugin(ScrollTrigger);
+                }
+            </script>
+
+</body>
+
+</html>

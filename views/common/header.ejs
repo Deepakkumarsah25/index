@@ -1,0 +1,200 @@
+<div class="header-container">
+    <!-- TOP HEADER (unchanged) -->
+    <div class="top-header">
+        <div class="web-text">
+            <p><span>RRID TECH PRIVATE LIMITED </span></p>
+            <p>Helpline: <span>+91- 9202707903</span></p>
+            <p>Email: <span>ridorg.in@gmail.com</span></p>
+        </div>
+        <div class="right-text">
+            <a href="#">ISO:9001:2015 Certified</a>
+            <a href="#">RRID</a>
+            <a href="#">Reg.No: 083632</a>
+            <a href="#">ESTD:2025</a>
+        </div>
+    </div>
+
+    <!-- MAIN NAVIGATION BAR -->
+    <div class="main-header">
+        <div class="nav">
+            <div class="logo">
+    <img src="/assist/image.png" alt="RID Bharat Logo">
+
+    <a href="/login" class="phone-login-btn">
+        <i class="fa-solid fa-right-to-bracket"></i>
+        <span>Login</span>
+    </a>
+
+    <div class="menu-icon" id="menuIcon">
+        <span></span><span></span><span></span>
+    </div>
+</div>
+            <div class="menu" id="innerCont">
+                <div class="upperNav">
+
+                    <!-- TEST SERIES / SERVICE PILL TOGGLE (new) -->
+                    <div class="pill-toggle-wrapper">
+                        <div class="pill-toggle pill-toggle-ts" id="pillToggleTS" data-active="testseries">
+                            <div class="pill-active-indicator"></div>
+                            <a href="/National-Test-Series" class="pill-option active-option" data-value="testseries"
+                                style="background-color: #29465B;" id="onlineTest1">
+                                <i class="fa-solid fa-clipboard-check"></i> All India Test
+                            </a>
+                            <a href="/rts/dashboard" class="pill-option active-option" data-value="testseries"
+                                id="onlineTest1">
+                                <i class="fa-brands fa-servicestack"></i> Test Series
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Certificate button (unchanged) -->
+                    <!-- CodeRank / NAUKRI PILL TOGGLE -->
+                    <div class="pill-toggle-wrapper">
+                        <div class="pill-toggle pill-toggle-ti" id="pillToggleTI" data-active="techinterview">
+                            <div class="pill-active-indicator"></div>
+                            <a href="/service" class="pill-option" data-value="service" id="serviceBtn"
+                                style="background-color:  #093434e3;" <i class="fa-solid fa-book"></i> Service
+                            </a>
+                            <a href="/tech-interview" class="pill-option active-option" data-value="techinterview"
+                                id="techInterviewBtn">
+                                <i class="fa-solid fa-headset"></i> CodeRank
+                            </a>
+
+                        </div>
+                    </div>
+                    <!-- LOGIN / REGISTER PILL TOGGLE (unchanged) -->
+                    <div class="pill-toggle-wrapper">
+                        <div class="pill-toggle pill-toggle-lr" id="pillToggleLR" data-active="login">
+                            <div class="pill-active-indicator"></div>
+                            <a href="/login" class="pill-option active-option" data-value="login" id="logInButton">
+                                <i class="fa-solid fa-right-to-bracket"></i> Login
+                            </a>
+                            <a href="/form" class="pill-option" data-value="register" id="signUpBtn">
+                                <i class="fa-solid fa-user-plus"></i> Register
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LOWER NAVIGATION LINKS (unchanged) -->
+                <ul class="lowerNav">
+                    <li><a class="menu-link" href="/"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a class="menu-link" href="/about"><i class="fa-solid fa-circle-info"></i> About Us</a></li>
+                    <li><a class="menu-link" href="/nokari"><i class="fa-solid fa-briefcase"></i>Apna Naukri</a></li>
+                    <li><a class="menu-link" href="/research"><i class="fa-solid fa-file-lines"></i> ResearchPapers</a>
+                    </li>
+                    <li><a class="menu-link" href="/internship"><i class="fa-solid fa-file-lines"></i>Internship</a>
+                    </li>
+                    <li>
+                        <a class="menu-link" href="/ebook/?search=&filter=all&sort=newest">
+                            <i class="fa-solid fa-book-open"></i> E-Book
+                        </a>
+                    </li>
+                    <li><a class="menu-link" href="/Certificate-Verification/verify.html"
+                            onclick="window.location.href='#'"><i class="fa-solid fa-headset"></i> Certificate </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    (function () {
+        // Generic pill toggle initializer
+        function initPillToggle(pillContainer) {
+            if (!pillContainer) return;
+            const options = pillContainer.querySelectorAll('.pill-option');
+            const indicator = pillContainer.querySelector('.pill-active-indicator');
+
+            function setActive(activeValue) {
+                pillContainer.setAttribute('data-active', activeValue);
+                options.forEach(function (opt) {
+                    if (opt.getAttribute('data-value') === activeValue) {
+                        opt.classList.add('active-option');
+                    } else {
+                        opt.classList.remove('active-option');
+                    }
+                });
+                var activeIndex = 0;
+                options.forEach(function (opt, idx) {
+                    if (opt.getAttribute('data-value') === activeValue) activeIndex = idx;
+                });
+                if (indicator) {
+                    indicator.style.transform = 'translateX(' + (activeIndex * 100) + '%)';
+                }
+            }
+
+            // Set initial state
+            var initialActive = pillContainer.getAttribute('data-active');
+            setActive(initialActive);
+
+            options.forEach(function (opt) {
+                opt.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var newValue = this.getAttribute('data-value');
+                    var currentActive = pillContainer.getAttribute('data-active');
+                    if (newValue !== currentActive) {
+                        setActive(newValue);
+                        var targetUrl = this.getAttribute('href');
+                        if (targetUrl && targetUrl !== '#') {
+                            setTimeout(function () {
+                                window.location.href = targetUrl;
+                            }, 150);
+                        }
+                    } else {
+                        // Already active, navigate directly
+                        var targetUrl = this.getAttribute('href');
+                        if (targetUrl && targetUrl !== '#') window.location.href = targetUrl;
+                    }
+                });
+            });
+
+            // Fix indicator on resize
+            window.addEventListener('resize', function () {
+                var cur = pillContainer.getAttribute('data-active');
+                var idx = 0;
+                options.forEach(function (opt, i) {
+                    if (opt.getAttribute('data-value') === cur) idx = i;
+                });
+                if (indicator) {
+                    indicator.style.transform = 'translateX(' + (idx * 100) + '%)';
+                }
+            });
+        }
+
+        // Init both pill toggles
+        initPillToggle(document.getElementById('pillToggleTS'));
+        initPillToggle(document.getElementById('pillToggleLR'));
+        initPillToggle(document.getElementById('pillToggleTI'));
+
+        // Mobile menu toggle
+        var menuIcon = document.getElementById('menuIcon');
+        var mobileMenu = document.getElementById('innerCont');
+
+        if (menuIcon && mobileMenu) {
+            menuIcon.addEventListener('click', function (e) {
+                e.stopPropagation();
+                this.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+                document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+            });
+
+            mobileMenu.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    if (window.innerWidth <= 768) {
+                        menuIcon.classList.remove('active');
+                        mobileMenu.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            });
+        }
+
+        window.addEventListener('resize', function () {
+            if (window.innerWidth > 768 && mobileMenu && mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+                if (menuIcon) menuIcon.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    })();
+</script>
